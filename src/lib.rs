@@ -59,8 +59,11 @@
 //! # });
 //! ```
 
-use egui::style::Margin;
-use egui::*;
+use egui::{
+    pos2, style::Margin, vec2, Color32, Context, CursorIcon, Frame, Id, LayerId, Order, Pos2, Rect,
+    Rounding, ScrollArea, Sense, Stroke, Ui, WidgetText,
+};
+// use egui::*;
 
 use tree::TabIndex;
 use utils::*;
@@ -240,7 +243,8 @@ impl<'tree, Tab> DockArea<'tree, Tab> {
                 rect,
                 margin.top,
                 style.separator_color,
-                Stroke::new(margin.top, style.border_color),
+                // Stroke::new(margin.top, style.border_color),
+                Stroke::new(margin.top, Color32::RED),
             );
         }
 

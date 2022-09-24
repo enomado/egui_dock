@@ -19,8 +19,15 @@ serde = ["dep:serde", "egui/serde"]
 
 
 [dependencies]
-egui = "0.19"
-serde = { version = "1", optional = true, features = ["derive"] }
+# egui = "*"
+
+# eframe = { path = "../egui/crates/eframe", features=[]}
+egui_extras = { path = "../egui/crates/egui_extras"}
+egui = { path = "../egui/crates/egui", features=["color-hex"]}
+epaint = { path = "../egui/crates/epaint", features=["color-hex"] }
+
+
+serde = { version = "*", optional = true, features = ["derive"] }
 
 [dev-dependencies]
-eframe = "0.19"
+eframe = "*"

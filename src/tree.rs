@@ -16,6 +16,7 @@ impl From<usize> for TabIndex {
 
 /// Represents an abstract node of a `Tree`.
 #[cfg_attr(feature = "serde", derive(serde::Deserialize, serde::Serialize))]
+#[derive(Debug)]
 pub enum Node<Tab> {
     /// Empty node
     Empty,
@@ -244,6 +245,7 @@ pub enum Split {
 
 /// Binary tree representing the relationships between `Node`s.
 #[cfg_attr(feature = "serde", derive(serde::Deserialize, serde::Serialize))]
+#[derive(Debug)]
 pub struct Tree<Tab> {
     tree: Vec<Node<Tab>>,
     focused_node: Option<NodeIndex>,

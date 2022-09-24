@@ -1,6 +1,9 @@
 use super::utils::*;
 use egui::style::Margin;
-use egui::*;
+use egui::{
+    epaint, vec2, Align2, Color32, CursorIcon, Id, Rect, Response, Rounding, Sense, Stroke,
+    TextStyle, Ui, Vec2, WidgetText,
+};
 
 /// Specifies the look and feel of egui_dock.
 #[derive(Clone)]
