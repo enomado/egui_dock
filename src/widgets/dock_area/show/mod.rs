@@ -117,7 +117,7 @@ impl<Tab> DockArea<'_, Tab> {
                                 self.events.push(DockEvent::LayoutCommitted);
                             }
                             OnCloseResponse::Focus => {
-                                leaf.active = path.tab;
+                                leaf.activate_tab_remembering(path.tab);
                                 self.new_focused = Some(path.node_path());
                                 self.events.push(DockEvent::LayoutCommitted);
                             }

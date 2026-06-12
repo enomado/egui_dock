@@ -21,6 +21,17 @@
   and `DockAreaResponse` are `#[non_exhaustive]` so future fine-grained
   variants can be added without breaking downstream consumers that go
   through the helpers.
+## Unreleased
+
+### Fixed
+
+- Removing the active tab of a leaf (closing it, or moving/detaching it out via
+  a split) now restores the tab that was active *before* it, instead of always
+  falling back to the left neighbour. This fixes the surprising jump when you
+  append a tab to a leaf (which auto-focuses it) and then move it elsewhere: the
+  leaf used to show the appended tab's neighbour rather than the tab you were
+  actually looking at. Tracked via a new `LeafNode::prev_active` field
+  (`#[serde(default)]`, so existing serialized layouts load unchanged).
 
 ## egui_dock 0.19.1 - 2026/03/31
 
